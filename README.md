@@ -3,8 +3,7 @@
 Methods have been taught by Dr. Rest and should not be posted anywhere else without permission.
 # Start the lab, make sure your instance is running on EC2 and log in via ssh.
 # Clone the respository
-**You only need to do this one time**
-On the command line, clone the respository.
+**You only need to do this one time** On the command line, clone the respository.
 ` git clone https://github.com/s4-iamkhan/ish-312-ec 	`
 # Create the BLAST database
 **You only need to do this one time**
