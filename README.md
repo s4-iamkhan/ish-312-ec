@@ -6,7 +6,7 @@ Methods have been taught by Dr. Rest and should not be posted anywhere else with
 
 You will be conducting a blast searches for the ARPC protein.
 
-The gene code can be found this in a shared google slides file. You can download it directly using the following command:
+The gene code can be found on websites such as the NIH. You can download it directly from the website using the following command:
 
     ncbi-acc-download -F fasta -m protein NP_001248755.1
  Now, perform a blast search using the query protein:
@@ -28,7 +28,7 @@ For our specific research, we require the e-value to be less than 1e-13.
 
 Here is a command you can use to filter our output file to satisfy this requirement:
 
-    awk '{if ($6<0.0000000000001)print $1 }' hox.blastp.detail.out > hox.blastp.detail.filtered.out
+    awk '{if ($6<0.0000000000001)print $1 }' arpc.blastp.detail.out > arpc.blastp.detail.filtered.out
 
 This will produce a filtered.out file we can use and have a set of putative homologs to the query that is needed for the research.
 
@@ -54,7 +54,7 @@ Provide some statistics about the alignment using [t_coffee](https://www.tcoffee
 
 # . Constructing a Phylogenetic Tree for AP3D1 Homologs from Sequence Data
 
-The data for your tree will be the alignment for Hox homologs that you made in lab3:  `AP3D1.homologs.al.fas`.
+The data for your tree will be the alignment for ARPC homologs that you made in lab3:  `AP3D1.homologs.al.fas`.
 
 Use IQ-TREE to find the maximum likehood tree estimate, specifying a particular model of substitution (VT+F+R10). 
 ```bash
@@ -118,7 +118,7 @@ The resulting file is called ``AP3D1.homologs.al.mid.treefile.reconciled.xml``
  
 To create a gene-reconciliation-with species tree reconciliation, you may use thirdkind:
  ```bash
-thirdkind -f hox.homologs.al.mid.treefile.reconciled.xml -o  hox.homologs.al.mid.treefile.reconciled.svg
+thirdkind -f arpc.homologs.al.mid.treefile.reconciled.xml -o  arpc.homologs.al.mid.treefile.reconciled.svg
  ```
  
 Note, thirdkind cuts off the events at the root of the tree. 
@@ -138,7 +138,7 @@ java -jar ~/tools/Notung-3.0-beta/Notung-3.0-beta.jar -s ../speciesTreeBilateria
 The output file will be the same as before, but with  "rooting.0" added to the file name. For example: ``AP3D1.homologs.al.mid.treefile.rooting.0.events.txt``
 
  
-# 4. Evaluating node (branch) support for the Hox gene tree using the bootstrap 
+# 4. Evaluating node (branch) support for the ARPC gene tree using the bootstrap 
 
 In lecture, we discussed bootstrap support.
 Let's re-run IQ-TREE, this time generating bootstrap support values. 
@@ -146,7 +146,7 @@ Let's re-run IQ-TREE, this time generating bootstrap support values.
 
 To obtain bootstrap support, its necessary iqtree tree search, and ask it to estimate bootstrap support using the ultrafast bootstrap. This will result in a bootstrapped tree for each bootstrap replicate we request.  
 
-First, copy the alignment and tree files to the lab6 hox directory. 
+First, copy the alignment and tree files to the lab6 ARPC directory. 
 ```bash
 cp ~ myusername/AP3D1.homologs.al.fas ~myusername/.
 cp AP3D1.homologs.al.fas.treefile ~myusername/.
@@ -155,7 +155,7 @@ cp AP3D1.homologs.al.fas.treefile ~myusername/.
 Then run this command in order to repeat the bootstrap command 
 
 ```bash=1
-iqtree -s AP3D1.homologs.al.fas -nt AUTO -bb 1000 -m VT+F+R10 -t AP3D1.homologs.al.fas.treefile -pre ARPC.bs -wbt
+iqtree -s AP3D1.homologs.al.fas -nt AUTO -bb 1000 -m VT+F+R10 -t AP3D1.homologs.al.fas.treefile -pre AP3D1.bs -wbt
 ```
  This file with the 1000 bootstrapped trees is called `AP3D1.bs.ufboot`. (But you will need to run the command for your own gene).
 
@@ -182,7 +182,7 @@ Recall that you can also display this as a ladderized cladogram (i.e. without br
 nw_order -c n AP3D1.bs.mid.suptree | nw_topology - | nw_display -s -w 1000 > AP3D1.bs.mid.suptree.Cl.svg -
 ```
 This will produce our gene trees with bootstrap support!
-# Domain Identification for Hox Proteins 
+# Domain Identification for ARPC Proteins 
 
 Now we are going to use RPS-BLAST to obtain the gene tree with domains within the protein sequences.
 
@@ -190,7 +190,7 @@ Now we are going to use RPS-BLAST to obtain the gene tree with domains within th
 We need to use unaligned protein sequence. We also need the sequence names to match the names we used in our phylogenetic analysis.
 We will use `AP3D1.homologs.fas`, which were our original, unaligned sequences from lab 3. 
 
-Make sure you are in the hox directory:
+Make sure you are in the ARPC directory:
 
 ```bash    
 cd ~ myusername/AP3D1
