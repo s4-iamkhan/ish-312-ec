@@ -121,10 +121,14 @@ At this point we created the species tree as part of trees to be used for bootst
 ## The Gene Tree
 
 We will be using the midpoint rooted gene tree was done previously. 
-`answers.AP3D1.homologs.al.fas.treefile` 
+```bash
+`answers.AP3D1.homologs.al.fas.treefile`
+```
 
 
-`ls ~ $MYGIT/AP3D1/AP3D1.homologs.al.mid.treefile`  
+```bash
+ls ~ $MYGIT/AP3D1/AP3D1.homologs.al.mid.treefile`
+```
 
 The resulting output should be: `/home/bio312-user/ish-312/AP3D1/AP3D1.homologs.al.mid.treefile`
 
