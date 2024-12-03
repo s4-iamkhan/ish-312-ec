@@ -5,7 +5,7 @@ Methods have been taught by Dr. Rest and should not be posted anywhere else with
 
 # Clone the respository
 
-**You only need to do this one time** 
+**You only need to do this one time.** 
 
 On the command line, clone the respository. 
 ```bash
@@ -14,21 +14,35 @@ git clone https://github.com/s4-iamkhan/ish-312-ec
 
 
 # Create the BLAST database
-**You only need to do this one time**
+
+**You only need to do this one time.**
+
 First, go to your folder:
-``` cd ~/s4-iamkhan/ish-312-ec ```
+```bash
+cd ~/s4-iamkhan/ish-312-ec
+```
 Next, uncompress the proteomes. Run the following command:
-```gunzip proteomes/*.gz```
+```bash
+gunzip proteomes/*.gz
+```
 Now, put all the protein sequences into a single file using the cat command:
-```cat  proteomes/*.faa > allprotein.fas ```
+```bash
+cat  proteomes/*.faa > allprotein.fas
+```
 Now we want to perform a BLAST search to find potential homologs of a query protein. Before you do this, you need to build a blast database with the proteomes we just concatenated.
 
 Type in the command to make the BLAST database.
-``` makeblastdb -in allprotein.fas -dbtype prot ```
+```bash
+makeblastdb -in allprotein.fas -dbtype prot
+ ```
 # Create a new working directory
-``` mkdir ~/s4-iamkhan/ish-312-ec/AP3D1 ```
+```bash
+mkdir ~/s4-iamkhan/ish-312-ec/AP3D1
+```
 Now go to this folder: 
-``` cd ~/s4-iamkhan/ish-312-ec/AP3D1 ```
+```bash
+cd ~/s4-iamkhan/ish-312-ec/AP3D1
+ ```
 # 1. BLAST AP3D1 against the database to identify AP3D1 homologs.
 
 You will be conducting a blast searches for the ARPC protein.
