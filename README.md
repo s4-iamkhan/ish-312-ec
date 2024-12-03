@@ -3,10 +3,13 @@
 Methods have been taught by Dr. Rest and should not be posted anywhere else without permission.
 # Start the lab, make sure your instance is running on EC2 and log in via ssh.
 Define the variable: 
+```bash
 MYGIT = s4-iamkhan
+```
 
+```bash
 echo "export MYGIT=$MYGIT" >> ~/.bashrc
-
+```
 # Clone the respository
 
 **You only need to do this one time.**
