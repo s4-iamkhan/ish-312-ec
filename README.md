@@ -43,7 +43,7 @@ now that proteomes have been downloaded, we need to use seqkit to produce a .fas
 ## Perform a global multiple sequence alignment in mafft: 
 Now we are going to use MAFFT which is a multiple sequence alignment program. We need to install it first before we use it. 
 
-	 wwget -O ~/tools/mafft-7.490-linux.tgz https://mafft.cbrc.jp/alignment/software/mafft-7.490-linux.tgz && tar xfvz ~/tools/mafft-7.490-linux.tgz -C ~/tools
+	wwget -O ~/tools/mafft-7.490-linux.tgz https://mafft.cbrc.jp/alignment/software/mafft-7.490-linux.tgz && tar xfvz ~/tools/mafft-7.490-linux.tgz -C ~/tools
 ```Now, use the following command to make a multiple sequence alignment using mafft:
 
 ```
