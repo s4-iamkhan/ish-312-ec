@@ -45,9 +45,8 @@ Now we are going to use MAFFT which is a multiple sequence alignment program. We
 
 	wwget -O ~/tools/mafft-7.490-linux.tgz https://mafft.cbrc.jp/alignment/software/mafft-7.490-linux.tgz && tar xfvz ~/tools/mafft-7.490-linux.tgz -C ~/tools
 ```Now, use the following command to make a multiple sequence alignment using mafft:
-
-```
 	~/tools/mafft-linux64/mafft.bat --localpair --maxiterate 100  AP3D1.homologs.fas   > AP3D1.homologs.al.fas 
+```
 Provide some statistics about the alignment using [t_coffee](https://www.tcoffee.org/Projects/tcoffee/):
 
      t_coffee -other_pg seq_reformat -in AP3D1.homologs.al.fas -output sim
