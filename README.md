@@ -1,7 +1,27 @@
 # ish-312-ec
 # Repository for Research on AP3D1 gene and ARPC gene family 
 Methods have been taught by Dr. Rest and should not be posted anywhere else without permission.
+# Start the lab, make sure your instance is running on EC2 and log in via ssh.
+# Clone the respository
+**You only need to do this one time**
+On the command line, clone the respository.
+```  git clone https://github.com/s4-iamkhan/ish-312-ec ```
+# Create the BLAST database
+**You only need to do this one time**
+First, go to your folder:
+``` cd ~/s4-iamkhan/ish-312-ec ```
+Next, uncompress the proteomes. Run the following command:
+```gunzip proteomes/*.gz```
+Now, put all the protein sequences into a single file using the cat command:
+```cat  proteomes/*.faa > allprotein.fas ```
+Now we want to perform a BLAST search to find potential homologs of a query protein. Before you do this, you need to build a blast database with the proteomes we just concatenated.
 
+Type in the command to make the BLAST database.
+``` makeblastdb -in allprotein.fas -dbtype prot ```
+# Create a new working directory
+``` mkdir ~/s4-iamkhan/ish-312-ec/AP3D1 ```
+Now go to this folder: 
+``` cd ~/s4-iamkhan/ish-312-ec/AP3D1 ```
 # 1. BLAST AP3D1 against the database to identify AP3D1 homologs.
 
 You will be conducting a blast searches for the ARPC protein.
@@ -42,11 +62,9 @@ now that proteomes have been downloaded, we need to use seqkit to produce a .fas
 
 ## Perform a global multiple sequence alignment in mafft: 
 Now we are going to use MAFFT which is a multiple sequence alignment program. We need to install it first before we use it. 
-
-	wwget -O ~/tools/mafft-7.490-linux.tgz https://mafft.cbrc.jp/alignment/software/mafft-7.490-linux.tgz && tar xfvz ~/tools/mafft-7.490-linux.tgz -C ~/tools
-```Now, use the following command to make a multiple sequence alignment using mafft:
-	~/tools/mafft-linux64/mafft.bat --localpair --maxiterate 100  AP3D1.homologs.fas   > AP3D1.homologs.al.fas 
-```
+```wwget -O ~/tools/mafft-7.490-linux.tgz https://mafft.cbrc.jp/alignment/software/mafft-7.490-linux.tgz && tar xfvz ~/tools/mafft-7.490-linux.tgz -C ~/tools```
+Now, use the following command to make a multiple sequence alignment using mafft:
+```~/tools/mafft-linux64/mafft.bat --localpair --maxiterate 100  AP3D1.homologs.fas   > AP3D1.homologs.al.fas ```
 Provide some statistics about the alignment using [t_coffee](https://www.tcoffee.org/Projects/tcoffee/):
 
      t_coffee -other_pg seq_reformat -in AP3D1.homologs.al.fas -output sim
