@@ -30,7 +30,7 @@ Assuming the database has already been created, we now want to perform a BLAST s
 
 # 1. BLAST AP3D1 against the database to identify AP3D1 homologs.
 
-You will be conducting a blast searches for the ARPC protein.
+You will be conducting a blast searches for the AP3D1 gene.
 
 The gene code can be found on websites such as the NIH. You can download it directly from the website using the following command:
 
