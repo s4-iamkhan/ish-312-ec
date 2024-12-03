@@ -19,7 +19,7 @@ git clone https://github.com/s4-iamkhan/ish-312-ec
 
 First, go to your folder:
 ```bash
-cd ~/s4-iamkhan/ish-312-ec
+cd ish-312-ec
 ```
 Next, uncompress the proteomes. Run the following command:
 ```bash
