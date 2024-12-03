@@ -8,8 +8,10 @@ Methods have been taught by Dr. Rest and should not be posted anywhere else with
 **You only need to do this one time** 
 
 On the command line, clone the respository. 
+```bash
+git clone https://github.com/s4-iamkhan/ish-312-ec
+```
 
-` git clone https://github.com/s4-iamkhan/ish-312-ec `
 
 # Create the BLAST database
 **You only need to do this one time**
