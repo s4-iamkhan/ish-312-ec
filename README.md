@@ -18,12 +18,6 @@ On the command line, clone the respository.
 ```bash
 git clone https://github.com/s4-iamkhan/ish-312-ec
 ```
-Assuming the database has already been created, we now want to perform a BLAST search to find potential homologs of a query protein. 
-
-Type in the command to make the BLAST database.
-```bash
-makeblastdb -in allprotein.fas -dbtype prot
- ```
 # Create a new working directory
 ```bash
 mkdir ~/ish-312-ec/AP3D1
@@ -32,6 +26,8 @@ Now go to this folder:
 ```bash
 cd ~/ish-312-ec/AP3D1
  ```
+Assuming the database has already been created, we now want to perform a BLAST search to find potential homologs of a query protein. 
+
 # 1. BLAST AP3D1 against the database to identify AP3D1 homologs.
 
 You will be conducting a blast searches for the ARPC protein.
